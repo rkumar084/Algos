@@ -22,6 +22,6 @@ public class SampleMain {
         BinaryTreeNode root = null;
     
         root = BuildBinarySearchTree.buildBinarySearchTree(numbers);
-        BinaryTreeTraversals.printZigZagOrder(root);
+        BinaryTreeTraversals.printLevelOrderInReverse(root);
   }
 }

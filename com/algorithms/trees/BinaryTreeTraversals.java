@@ -52,6 +52,59 @@ public class BinaryTreeTraversals {
     }
   }
   
+  public static void printLevelOrderRightToLeft(BinaryTreeNode root) {
+
+    if (root == null) return;
+
+    Queue<BinaryTreeNode> queue = new LinkedList<BinaryTreeNode>();
+
+    queue.add(root);
+    queue.add(null);
+
+    while (!queue.isEmpty()) {
+      System.out.println(""); 
+      while (true) {
+        BinaryTreeNode tempNode = queue.remove();
+        if (tempNode == null) {
+          if (!queue.isEmpty()) queue.add(null);
+          break;
+        }
+        System.out.print("\t" + tempNode.getData());
+        if (tempNode.getRight() != null) queue.add(tempNode.getRight());
+        if (tempNode.getLeft() != null) queue.add(tempNode.getLeft());
+      }
+    }
+  }
+  
+  public static void printLevelOrderInReverse(BinaryTreeNode root) {
+
+    if (root == null) return;
+
+    Queue<BinaryTreeNode> queue = new LinkedList<BinaryTreeNode>();
+    Stack<Integer> stack = new Stack<Integer>();
+
+    queue.add(root);
+    queue.add(null);
+
+    while (!queue.isEmpty()) {
+      System.out.println(""); 
+      while (true) {
+        BinaryTreeNode tempNode = queue.remove();
+        if (tempNode == null) {
+          if (!queue.isEmpty()) queue.add(null);
+          break;
+        }
+        //System.out.print("\t" + tempNode.getData());
+        stack.add(tempNode.getData());
+        if (tempNode.getRight() != null) queue.add(tempNode.getRight());
+        if (tempNode.getLeft() != null) queue.add(tempNode.getLeft());
+      }
+    }
+    
+    while (!stack.isEmpty())
+      System.out.print("\t" + stack.pop());
+  }
+  
   public static void printZigZagOrder(BinaryTreeNode root) {
 
     if (root == null) return;
