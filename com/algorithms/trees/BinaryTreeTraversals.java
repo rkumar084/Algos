@@ -1,7 +1,9 @@
 package com.algorithms.trees;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Set;
 import java.util.Stack;
 
 public class BinaryTreeTraversals {
@@ -138,4 +140,74 @@ public class BinaryTreeTraversals {
         System.out.print("\t" + stack.pop());
     }
   }
+  
+  public static void printInorderNonRecursive(BinaryTreeNode root) {
+    if (root == null) return;
+    Stack<BinaryTreeNode> stack = new Stack<BinaryTreeNode>();
+    
+    BinaryTreeNode tempNode = null;
+    Set<BinaryTreeNode> visitedNodesSet = new HashSet<BinaryTreeNode>(); 
+    
+    stack.push(root);
+    
+    while(!stack.isEmpty()) {
+      tempNode = stack.pop();
+      
+      if(!visitedNodesSet.contains(tempNode) && tempNode.getLeft() != null) {
+        stack.push(tempNode);
+        stack.push(tempNode.getLeft());
+        visitedNodesSet.add(tempNode);
+        visitedNodesSet.add(tempNode.getLeft());
+      } else {
+        System.out.print("\t"  + tempNode.getData()); 
+        if (tempNode.getRight() != null) 
+          stack.push(tempNode.getRight());
+      }
+    }
+  }
+  
+  public static void printPreorderNonRecursive(BinaryTreeNode root) {
+    if (root == null) return;
+    Stack<BinaryTreeNode> stack = new Stack<BinaryTreeNode>();
+    
+    BinaryTreeNode tempNode = null;
+    stack.push(root);
+    
+    while(!stack.isEmpty()) {
+      tempNode = stack.pop();
+        System.out.print(tempNode.getData()  + "\t"); 
+        if (tempNode.getRight() != null) 
+          stack.push(tempNode.getRight());
+        if (tempNode.getLeft() != null) 
+          stack.push(tempNode.getLeft());
+    }
+  }
+
+  public static void printPostorderNonRecursive(BinaryTreeNode root) {
+    if (root == null) return;
+    Stack<BinaryTreeNode> stack = new Stack<BinaryTreeNode>();
+    
+    BinaryTreeNode tempNode = null;
+    Set<BinaryTreeNode> visitedNodesSet = new HashSet<BinaryTreeNode>(); 
+    
+    stack.push(root);
+    
+    while(!stack.isEmpty()) {
+      tempNode = stack.pop();
+      
+      if(!visitedNodesSet.contains(tempNode)) {
+        stack.push(tempNode);
+        visitedNodesSet.add(tempNode);
+
+        if (tempNode.getRight() != null) 
+          stack.push(tempNode.getRight());
+        if (tempNode.getLeft() != null)
+          stack.push(tempNode.getLeft());
+
+      } else {
+        System.out.print(tempNode.getData() + "\t"); 
+      }
+    }
+  }
+  
 }
