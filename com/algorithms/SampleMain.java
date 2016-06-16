@@ -1,6 +1,7 @@
 package com.algorithms;
 
 import com.algorithms.trees.AncestorRelated;
+import com.algorithms.trees.BSTSearching;
 import com.algorithms.trees.BinaryTreeNode;
 import com.algorithms.trees.BinaryTreeTraversals;
 import com.algorithms.trees.BuildBinarySearchTree;
@@ -26,6 +27,6 @@ public class SampleMain {
 
     
         root = BuildBinarySearchTree.buildBinarySearchTree(numbers);
-        AncestorRelated.printAllRootToLeafPaths(root, "Path");
+        System.out.println(BSTSearching.leastCommonAncestor(root,1,14) ); 
   }
 }
