@@ -1,5 +1,6 @@
 package com.algorithms;
 
+import com.algorithms.heaps.HeapCreation;
 import com.algorithms.trees.BSTSearching;
 import com.algorithms.trees.BinaryTreeNode;
 import com.algorithms.trees.BuildBinarySearchTree;
@@ -11,11 +12,11 @@ public class SampleMain {
     //    int noOfInputs = Integer.parseInt(in.nextLine());
 
     int[] numbers = {8, 3, 10, 1, 6, 14, 4, 7, 13};
+    //int[] numbers = {8, 3, 10, 1, 6, 14, 4, 7, 13, 20, 30, 25, 100, 90, 5, 35};
+    HeapCreation.buildHead(numbers);
+    HeapCreation.printHeap(numbers);
 
-    BinaryTreeNode root = null;
-    BinaryTreeNode node = new BinaryTreeNode(13, null, null);
-
-    root = BuildBinarySearchTree.buildBinarySearchTree(numbers);
-    System.out.println(BSTSearching.bestFit(root,110) ); 
+ 
   }
+  
 }
