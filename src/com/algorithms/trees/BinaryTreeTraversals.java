@@ -149,7 +149,7 @@ public class BinaryTreeTraversals {
     Set<BinaryTreeNode> visitedNodesSet = new HashSet<BinaryTreeNode>(); 
     
     stack.push(root);
-    
+    System.out.println("Printing inorder");
     while(!stack.isEmpty()) {
       tempNode = stack.pop();
       
@@ -157,7 +157,7 @@ public class BinaryTreeTraversals {
         stack.push(tempNode);
         stack.push(tempNode.getLeft());
         visitedNodesSet.add(tempNode);
-        visitedNodesSet.add(tempNode.getLeft());
+     //   visitedNodesSet.add(tempNode.getLeft());
       } else {
         System.out.print("\t"  + tempNode.getData()); 
         if (tempNode.getRight() != null) 
