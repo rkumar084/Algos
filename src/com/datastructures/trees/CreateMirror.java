@@ -1,4 +1,4 @@
-package com.algorithms.trees;
+package com.datastructures.trees;
 
 public class CreateMirror {
   public static void createMirror (BinaryTreeNode root) {

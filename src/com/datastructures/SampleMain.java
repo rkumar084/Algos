@@ -1,12 +1,12 @@
-package com.algorithms;
+package com.datastructures;
 
-import com.algorithms.heaps.Heap;
-import com.algorithms.heaps.HeapCreation;
-import com.algorithms.heaps.HeapSearch;
-import com.algorithms.trees.BSTSearching;
-import com.algorithms.trees.BinaryTreeNode;
-import com.algorithms.trees.BinaryTreeTraversals;
-import com.algorithms.trees.BuildBinarySearchTree;
+import com.datastructures.heaps.Heap;
+import com.datastructures.heaps.HeapCreation;
+import com.datastructures.heaps.HeapSearch;
+import com.datastructures.trees.BSTSearching;
+import com.datastructures.trees.BinaryTreeNode;
+import com.datastructures.trees.BinaryTreeTraversals;
+import com.datastructures.trees.BuildBinarySearchTree;
 
 public class SampleMain {
 

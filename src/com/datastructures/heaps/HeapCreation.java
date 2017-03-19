@@ -1,4 +1,4 @@
-package com.algorithms.heaps;
+package com.datastructures.heaps;
 
 public class HeapCreation {
   
